@@ -21,6 +21,7 @@
   --box-shadow-1: 0 3px 15px rgba(0,0,0,.3);
 }
 
+
 .light-mode {
   --color-primary: #b6c5a8;
   --color-secondary: #8b4b02;
@@ -33,6 +34,26 @@
   --color-grey-4: #363131;
   --color-grey-5: #f8f8f8;
   --color-grey-6: #12181b;
+}
+.stat-title3::before {
+  content: "";
+  position: absolute;
+  margin-right:50px;
+  top: 70;
+  width: 20%;
+  height: 3px;
+  background-color: var(--color-grey-5);
+  
+}
+.stat-title4::before {
+  content: "";
+  position:absolute;
+  margin-left: 330px;
+  top: 70;
+  width: 20%;
+  height: 3px;
+  background-color: var(--color-grey-5);
+  
 }
 
 body {
@@ -98,7 +119,7 @@ section {
   position: fixed;
   z-index: 10;
   top: 50%;
-  right: 1%; /*ici*/
+  right: 1%; 
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -109,30 +130,16 @@ section {
   padding: 1rem;
   cursor: pointer;
   background-color: var(--color-grey-4);
-  width: 105px;
-  height: 55px;
+  width: 60px;
+  height: 45px;
   border-radius: 60%;
-  display: flex;
-  justify-content: right;
-  align-items: center;
-  margin: 0.7rem 0;
-  box-shadow: var(--box-shadow-1);
-}
-.controls .control4 {
-  padding: 1rem;
-  cursor: pointer;
-  background-color: var(--color-grey-4);
-  width: 100px;
-  height: 55px;
-  border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
   margin: 0.7rem 0;
   box-shadow: var(--box-shadow-1);
-  color: rgb(187, 152, 219);
-
 }
+
 
 .controls .control i {
   margin-left: 0.5rem;
@@ -154,11 +161,11 @@ section {
   color: var(--color-white);
 }
 
-.theme-btn {
-  top: 5%;
+.theme-btn {                                 /*Theme boutton  plein affichage */
+  top: 3%;
   right: 3%;
-  width: 70px;
-  height: 70px;
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
   background-color: var(--color-grey-4);
   cursor: pointer;
@@ -173,7 +180,7 @@ section {
   transform: translateY(-3px);
 }
 .theme-btn i {
-  font-size: 1.4rem;
+  font-size: 1.1rem;
   color: var(--color-grey-2);
   pointer-events: none;
 }
@@ -364,16 +371,18 @@ section {
   padding: 3.5rem 0;
   position: relative;
 }
+
 .stat-title::before {
   content: "";
   position: absolute;
   left: 50%;
   top: 0;
-  width: 40%;
-  height: 1px;
+  width: 35%;
+  height: 3px;
   background-color: var(--color-grey-5);
   transform: translateX(-50%);
 }
+
 
 /*Timeline*/
 
@@ -504,14 +513,88 @@ section {
   transform: scale(1);
 }
 
-
-@media screen and (max-width: 800px) {
+/* ... Vos styles généraux ici ... */
+/* Styles pour les écrans de 362px ou moins */
+@media screen and (max-width: 362px) {
   .blogs {
-    grid-template-columns: repeat(2, 1fr) repeat(1, 2fr); /* new template for smaller screens */
+    grid-template-columns: 1fr; /* new template for smaller screens */
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .blogs .blog {
+    width: 100%; /* Ajustez la largeur en fonction de vos besoins */
+    max-width: none; /* Réinitialisez la largeur maximale */
+    position: relative;
+    background-color: var(--color-grey-5);
+    border-radius: 5px;
+    box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s ease-in-out;
+    margin-bottom: 2rem;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .blogs .blog:hover {
+    box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.3);
+    transform: translateY(-5px);
+    transition: all 0.4s ease-in-out;
+  }
+
+  .blogs .blog:hover img {
+    filter: grayscale(0);
+    transform: scale(1.1);
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.8);
+  }
+
+  .blogs .blog img {
+    width: 100%;
+    height: 8cm; /* Ajustez la hauteur en fonction de vos besoins */
+    object-fit: cover;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    transition: all 0.4s ease-in-out;
+  }
+
+  .blogs .blog .blog-text {
+    margin-top: -7px;
+    padding: 1.1rem;
+    border-top: 8px solid var(--color-secondary);
+  }
+
+  .blogs .blog .blog-text h4 {
+    font-size: 1.5rem;
+    margin-bottom: 0.7rem;
+    transition: all 0.4s ease-in-out;
+    cursor: pointer;
+  }
+
+  .blogs .blog .blog-text h4:hover {
+    color: var(--color-secondary);
+  }
+
+  .blogs .blog .blog-text p {
+    color: var(--color-grey-2);
+    line-height: 2rem;
+    padding-bottom: 1rem;
   }
 }
 
 
+/* Styles pour les écrans supérieurs à 362px */
+/* Styles pour les écrans de 363px ou plus */
+@media screen and (min-width: 360px) {
+  body {
+    font-size: 14px;
+}
+#toggleButton {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+}
+  .blogs {
+    grid-template-columns: repeat(2, 1fr) repeat(1, 2fr);  }
+  
 .blogs {
   display: grid;
   grid-template-columns: repeat(2, 3fr);
@@ -563,6 +646,17 @@ section {
   line-height: 2rem;
   padding-bottom: 1rem;
 }
+}
+.blogs .blog-text span {
+  color: #8b4b02;
+  font-size: 27px;
+  line-height: 1.5;
+  text-align: right; /* Alignement à droite */
+  display: block; /* Pour que la propriété text-align fonctionne */
+}
+
+
+
 
 .contact-content-con {
   display: flex;
@@ -734,14 +828,17 @@ section {
   padding-left: 0;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 970px) {
   header {
     padding: 0 !important;
   }
-
-  .theme-btn {
-    width: 50px;
-    height: 50px;
+ 
+                                    /*Affichage btn en petite ecran  */
+  .theme-btn {                        
+    width: 25px;
+    height: 25px;
+  
+    
   }
 
   .header-content {
@@ -773,6 +870,7 @@ section {
   .controls {
     top: auto;
     bottom: 0;
+    height :70px;
     flex-direction: row;
     justify-content: center;
     left: 50%;
@@ -782,12 +880,12 @@ section {
   }
   
   .controls .control {
-    margin: 1rem 0.3rem;
-    width: 70px;
-    height: 70px;
-    border-radius: 50%;
+    margin: 0.1rem 0.3rem;
+    width: 55px;
+    height: 50px;
+    border-radius: 60%;
     display: flex;
-    justify-content: center;
+
     align-items: center;
     background-color: var(--color-secondary);
     cursor: pointer;
@@ -795,7 +893,7 @@ section {
   }
   
   .controls .control i {
-    font-size: 1.8rem;
+    font-size: 1.5rem;
     color: var(--color-white);
   }
   
@@ -1023,5 +1121,76 @@ section {
   border: solid;
   height: 1cm;
   width: 2cm;
+  margin-left: 70px;
+  margin-top:20px;
 }
-/*# sourceMappingURL=styles.css.map */
+
+
+
+
+                                    /*# Regler le max with selon la taille de l'ecran */
+
+
+.cadre {
+  border: 2px solid #352411;
+  padding: 10px;
+  width: 100%;
+  /* Ajustez la largeur en fonction de vos besoins */
+  margin: 30px auto;
+  /* Pour centrer le cadre horizontalement */
+  height: 118cm;
+}
+.titre {
+  text-align: center;
+  font-size: 24px;
+  color: #2f5842;
+  text-decoration: underline;
+}
+.cadre-contact {
+  border: 1px solid #153b5c; /* Bordure du cadre */
+  padding: 20px; /* Espacement intérieur du cadre */
+  margin: 0 auto; /* Centre le cadre horizontalement */
+  text-align: right; /* Alignement du texte à droite */
+}
+.underline-text::after {
+  content: "";
+  display: block;
+  width: 80%;
+  border-bottom: 2px solid #153b5c;
+  position: absolute;
+  bottom: 0;
+  left: 30px; /* Ajuste la position pour centrer */
+}
+.main-title h2 {
+  font-size: 3rem;
+}
+.main-title h2 span {
+  font-size: 3rem;
+}
+.main-title h2 .bg-text {
+  font-size: 4rem;
+}
+#toggleButton.sticky-button {
+  position: sticky;
+  bottom: 0;
+ 
+}
+.sticky-button {
+  position: relative;
+  bottom: 20px;
+  right: 20px;
+  background-color: #8b4b02;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  height: 40px; 
+ 
+}
+.blogs-content {
+  margin-bottom: 60px; /* Ajoutez de l'espace en bas de la section pour éviter l'occultation par le bouton */
+}
+
+
+
