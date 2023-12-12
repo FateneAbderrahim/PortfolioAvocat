@@ -459,6 +459,7 @@ section {
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 2rem;
   margin-top: 3rem;
+  margin-bottom: 2rem; /* Ajoutez la marge basse que vous préférez */
 }
 .portfolios .portfolio-item {
   position: relative;
@@ -598,6 +599,9 @@ section {
 @media screen and (min-width: 360px) {
   body {
     font-size: 14px;
+    display: flex;
+        flex-wrap: nowrap; /* Prevent wrapping to keep divs in a single row */
+        justify-content: space-between;
 }
 #toggleButton {
   position: fixed;
@@ -609,9 +613,12 @@ section {
   
 .blogs {
   display: grid;
-  grid-template-columns: repeat(2, 3fr);
+  grid-template-columns: repeat(1, 3fr);
   grid-gap: 2rem;
   margin-top: 3rem;
+  width: 100%; /* Adjust the width based on your preference */
+   /* Remove the margin to make divs stick together */
+
 }
 .blogs .blog {
   position: relative;
@@ -1169,6 +1176,7 @@ section {
   font-size: 3rem;
 }
 .main-title h2 span {
+
   font-size: 3rem;
 }
 .main-title h2 .bg-text {
