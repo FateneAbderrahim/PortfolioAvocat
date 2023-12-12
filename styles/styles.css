@@ -44,7 +44,12 @@
 
 }
 
-
+body, h1, h2, h3, p, div {
+  margin: 0;
+  padding: 0;
+  font-size: 16px; /* Utilise des unités relatives comme em pour la taille de police */
+  width: 100%; 
+ }
 
 .stat-title3::before {
   content: "";
@@ -73,6 +78,9 @@ body {
   font-size: 1.1rem;
   color: var(--color-white);
   transition: all 0.4s ease-in-out;
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
 a {
