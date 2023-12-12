@@ -8,7 +8,7 @@
 :root {
   --color-primary: #b6c5a8;
   --color-secondary: #8b4b02;
-  --color-white: #050505;
+  --color-white: #000;
   --color-black: #000;
   --color-grey0: #f8f8f8;
   --color-grey-1: #0a0c0d;
@@ -43,6 +43,9 @@
 
 
 }
+
+
+
 .stat-title3::before {
   content: "";
   position: absolute;
@@ -237,7 +240,8 @@ section {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding-right: 18rem;
+  padding-right: 10rem;
+  margin-top: 17px;
 }
 .header-content .right-header .name {
   font-size: 3rem;
@@ -590,77 +594,71 @@ section {
 
 
 /* Styles pour les écrans supérieurs à 362px */
+/* Styles pour les écrans de 363px ou plus */
 @media screen and (min-width: 360px) {
   body {
     font-size: 14px;
-  }
-
-  #toggleButton {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-  }
-
-  .blogs {
-    display: grid;
-    grid-template-columns: repeat(2fr);
-    grid-gap: 2rem;
-    margin-top: 3rem;
-  }
-
-  .blogs .blog {
-    position: relative;
-    background-color: var(--color-grey-5);
-    border-radius: 5px;
-    box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.1);
-    transition: all 0.4s ease-in-out;
-  }
-
-  .blogs .blog:hover {
-    box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.3);
-    transform: translateY(-5px);
-    transition: all 0.4s ease-in-out;
-  }
-
-  .blogs .blog:hover img {
-    filter: grayscale(0);
-    transform: scale(1.1);
-    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.8);
-  }
-
-  .blogs .blog img {
-    width: 100%;
-    height: 300px;
-    object-fit: cover;
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
-    transition: all 0.4s ease-in-out;
-  }
-
-  .blogs .blog .blog-text {
-    margin-top: -7px;
-    padding: 1.1rem;
-    border-top: 8px solid var(--color-secondary);
-  }
-
-  .blogs .blog .blog-text h4 {
-    font-size: 1.5rem;
-    margin-bottom: 0.7rem;
-    transition: all 0.4s ease-in-out;
-    cursor: pointer;
-  }
-
-  .blogs .blog .blog-text h4:hover {
-    color: var(--color-secondary);
-  }
-
-  .blogs .blog .blog-text p {
-    color: var(--color-grey-2);
-    line-height: 2rem;
-    padding-bottom: 1rem;
-  }
 }
-
+#toggleButton {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+}
+  .blogs {
+    grid-template-columns: repeat(2, 1fr) repeat(1, 2fr);  }
+  
+.blogs {
+  display: grid;
+  grid-template-columns: repeat(2, 3fr);
+  grid-gap: 2rem;
+  margin-top: 3rem;
+}
+.blogs .blog {
+  position: relative;
+  background-color: var(--color-grey-5);
+  border-radius: 5px;
+  box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.1);
+  transition: all 0.4s ease-in-out;
+}
+.blogs .blog:hover {
+  box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.3);
+  transform: translateY(-5px);
+  transition: all 0.4s ease-in-out;
+}
+.blogs .blog:hover img {
+  filter: grayscale(0);
+  transform: scale(1.1);
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.8);
+}
+.blogs .blog img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  /*filter: grayscale(100%);*/
+  transition: all 0.4s ease-in-out;
+}
+.blogs .blog .blog-text {
+  margin-top: -7px;
+  padding: 1.1rem;
+  border-top: 8px solid var(--color-secondary);
+}
+.blogs .blog .blog-text h4 {
+  font-size: 1.5rem;
+  margin-bottom: 0.7rem;
+  transition: all 0.4s ease-in-out;
+  cursor: pointer;
+}
+.blogs .blog .blog-text h4:hover {
+  color: var(--color-secondary);
+}
+.blogs .blog .blog-text p {
+  color: var(--color-grey-2);
+  line-height: 2rem;
+  padding-bottom: 1rem;
+}
+}
 .blogs .blog-text span {
   color: #8b4b02;
   font-size: 27px;
@@ -1215,10 +1213,29 @@ body {
   font-size: 24px;
   line-height: 1.5;
   padding: 10px;
-  color: rgb(43, 40, 40); /* Couleur du texte par défaut */
+  color:var(--color-white); /* Couleur du texte par défaut */
   
 }
 
+.input-control {
+  margin-bottom: 25px;
+}
+
+.input-control input[type="text"],
+.input-control input[type="email"],
+.input-control input[type="num"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+  text-align: right; /* Aligne le texte à gauche */
+
+}
+
+.last-textarea {
+  height: 150px; /* Ajustez la hauteur du champ de texte selon vos besoins */
+  text-align: right; /* Aligne le texte à gauche */
+}
 
 
 
