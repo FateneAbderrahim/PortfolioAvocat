@@ -21,6 +21,13 @@
   --color-grey-7: #153b5c;
 
 }
+@media (max-width: 768px) {
+  .name {
+    font-size: 4px;
+    color: #000;
+  }
+}
+
 
 
 .light-mode {
@@ -1256,7 +1263,10 @@ body {
 /* Style de base pour les blogs */
 
 
-
+.custom-paragraph {
+  font-size: 8px; /* Choisissez la taille de police désirée en pixels */
+  line-height: 1.6; /* Choisissez la hauteur de ligne désirée */
+}
 
 
 
